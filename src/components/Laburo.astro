@@ -1,0 +1,21 @@
+---
+interface Props {
+  title: string;
+  experience: string[];
+  date: string;
+}
+
+const { title, experience, date } = Astro.props;
+---
+
+<ul class="ml-6 my-8">
+  <li>
+    <p>{title}</p>
+    <p>{date}</p>
+  </li>
+  <li>
+    <ul class="list-disc ml-12">
+      {experience.map((exp, index) => <li>{exp}</li>)}
+    </ul>
+  </li>
+</ul>

@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  desc: string;
+  tecnoSrc: string[];
+  proySrc: string;
+  shadow: string;
+  gradient: string;
+}
+
+const { title, desc, tecnoSrc, proySrc, shadow, gradient } = Astro.props;
+---
+
+<!-- hover:shadow-blue-500/50 shadow-blue-900/50 --><!-- from-red-950 via-red-150 to-grey-50 -->
+<div
+  class=` shadow-lg ${shadow} ${gradient} rounded-lg flex flex-col text-white`
+>
+  <img class="w-full h-48 rounded-t-lg" src={proySrc} />
+  <div class="p-4">
+    <h2 class="text-lg font-semibold mb-2">{title}</h2>
+    <p class="text-gray-600 mb-4">{desc}</p>
+
+    <div class="flex">
+      {tecnoSrc.map((src, index) => <img class="w-10 h-10" src={src} />)}
+    </div>
+  </div>
+</div>

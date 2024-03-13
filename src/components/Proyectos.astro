@@ -1,0 +1,57 @@
+---
+import Proyecto from "../components/Proyecto.astro";
+---
+
+<section class="my-8">
+  <h4 class="text-3xl">Proyectos</h4>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8 mt-4">
+    <Proyecto
+      title="FlexTrainer"
+      desc="Sistema de información de gestión de planes de entrenamiento para gimnasios"
+      tecnoSrc={["/public/favicon.svg"]}
+      proySrc="/src/assets/FlexLogo.png"
+      shadow="hover:shadow-red-500/50 shadow-red-900/50"
+      gradient="bg-gradient-to-r from-red-950 via-red-150 to-red-950"
+    />
+    <Proyecto
+      title="Neon Todo Machine"
+      desc="Un gestor de tareas"
+      tecnoSrc={["/public/favicon.svg"]}
+      proySrc="/src/assets/TodoMachineLogo.png"
+      shadow="hover:shadow-blue-500/50 shadow-blue-900/50"
+      gradient="bg-gradient-to-r from-blue-950 via-blue-550 to-cyan-950"
+    />
+    <Proyecto
+      title="Google Translate Clone"
+      desc="Clon del traductor de google"
+      tecnoSrc={["/public/favicon.svg"]}
+      proySrc="/src/assets/TranslateClone.png"
+      shadow="hover:shadow-slate-300/50 shadow-gray-900/50"
+      gradient="bg-gradient-to-r from-slate-800 via-stone-550 to-slate-600"
+    />
+    <Proyecto
+      title="Tic Tac Toe"
+      desc="Juego de TATETI"
+      tecnoSrc={["/public/favicon.svg"]}
+      proySrc="/src/assets/TicTacToe.png"
+      shadow="hover:shadow-slate-300/50 shadow-gray-900/50"
+      gradient="bg-gradient-to-r from-slate-800 via-stone-550 to-slate-600"
+    />
+    <Proyecto
+      title="Acme Dashboard"
+      desc="Dashboard del tutorial de NextJs"
+      tecnoSrc={["/public/favicon.svg"]}
+      proySrc="/src/assets/AcmeDashboard.png"
+      shadow="hover:shadow-blue-500/50 shadow-blue-900/50"
+      gradient="bg-gradient-to-r from-blue-800 via-blue-550 to-cyan-800"
+    />
+    <Proyecto
+      title="Pokedex"
+      desc="Pokedex"
+      tecnoSrc={["/public/favicon.svg"]}
+      proySrc="/src/assets/pokeball.png"
+      shadow="hover:shadow-red-500/50 shadow-red-900/50"
+      gradient="bg-gradient-to-r from-red-950 via-stone-650 to-stone-400"
+    />
+  </div>
+</section>
