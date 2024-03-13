@@ -4,21 +4,24 @@ import Card from "../components/Card.astro";
 import Header from "../components/Header.astro";
 import Profile from "../components/Profile.astro";
 import Conocimientos from "../components/Conocimientos.astro";
+import Experiencia from "../components/Experiencia.astro";
+import Proyectos from "../components/Proyectos.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
     <Header />
     <Profile />
+    <Experiencia />
     <Conocimientos />
+    <Proyectos />
   </main>
 
   <style>
     main {
       margin: auto;
       padding: 1rem;
-      width: 800px;
-      max-width: 1000px;
+      max-width: 800px;
       color: rgb(207, 202, 202);
       font-size: 20px;
       line-height: 1.6;
