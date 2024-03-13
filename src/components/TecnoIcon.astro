@@ -1,0 +1,18 @@
+---
+interface Props {
+  src: string;
+  name: string;
+  alt: string;
+}
+
+const { src, name, alt } = Astro.props;
+---
+
+<div class="">
+  <img src={src} aria-hidden="false" alt={alt} class="w-10 h-10 mx-auto" />
+  <p class="text-center text-base">{name}</p>
+</div>
+
+<!-- "https://cdn.worldvectorlogo.com/logos/react-1.svg" -->
+<!-- name: ReactJs -->
+<!-- alt: React logo -->
