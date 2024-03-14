@@ -10,12 +10,15 @@ const { title, experience, date } = Astro.props;
 
 <ul class="ml-6 my-4">
   <li>
-    <p>{title}</p>
-    <p>{date}</p>
+    <p class="font-semibold text-lg">{title}</p>
+    <!-- Título con negrita y tamaño de fuente grande -->
+    <p class="text-gray-400 text-sm">{date}</p>
+    <!-- Fecha con un color más tenue y tamaño de fuente pequeño -->
   </li>
   <li>
     <ul class="list-disc ml-12">
-      {experience.map((exp, index) => <li>{exp}</li>)}
+      {experience.map((exp, index) => <li class="text-base">{exp}</li>)}
+      <!-- Experiencia con tamaño de fuente base -->
     </ul>
   </li>
 </ul>
