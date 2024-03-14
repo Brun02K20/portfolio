@@ -10,24 +10,37 @@ import Gmail from "../icons/Gmail.astro";
 <article class="flex flex-col items-center md:flex-row border-lime-200 my-8">
   <img
     src="/assets/foto.png"
-    class="w-48 h-auto rounded-full md:mr-8 md:mb-0"
+    class="w-48 h-auto rounded-full md:mr-8 md:mb-0 shadow-md shadow-indigo-400"
     alt="Profile Photo"
   />
   <div class="md:ml-8 flex flex-col md:text-left text-center">
     <div>
-      <h2 class="text-red-400 text-2xl font-angkor">
+      <h2 class="text-blue-500 text-2xl font-angkor">
         Hola! Soy Bruno Virinni :D
       </h2>
-      <h3 class="text-yellow-400 text-2xl font-angkor">
+      <h3 class="text-blue-300 text-2xl font-angkor">
         Analista Universitario en Sistemas | FullStack Developer
       </h3>
       <p>+2 años de experiencia como frontend developer</p>
       <p>+1 año de experiencia como fullstack developer</p>
       <p>De Córdoba, Argentina</p>
       <div class="flex items-center justify-center md:justify-start mt-4">
-        <Linkedin />
-        <GitHub />
-        <Gmail />
+        <!-- Primer div con enlaces -->
+        <div class="flex items-center justify-center md:justify-start">
+          <Linkedin />
+          <GitHub />
+          <Gmail />
+        </div>
+        <!-- Segundo div con botón de descarga -->
+        <div class="md:ml-4">
+          <a href="/pdfs/CV -- BRUNO LASZLO VIRINNI.pdf" download>
+            <button
+              class="bg-blue-500 hover:shadow-indigo-600 hover:bg-blue-600 transform hover:scale-105 shadow-md shadow-indigo-400 text-white font-bold py-2 px-2 rounded-full transition-all duration-300"
+            >
+              Descargar CV
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   </div>
