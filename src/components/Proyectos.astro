@@ -1,13 +1,14 @@
 ---
 import Proyecto from "../components/Proyecto.astro";
+import "@fontsource/oswald";
 ---
 
 <section class="my-8" id="proyectos">
-  <h4 class="text-3xl">Proyectos</h4>
+  <h4 class="text-4xl font-oswald font-semibold">Proyectos</h4>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8 mt-4">
     <Proyecto
       title="FlexTrainer"
-      desc="Sistema de información de gestión de planes de entrenamiento para gimnasios"
+      desc="Sistema de información de gestión de alumnos, profesionales, y planes de entrenamiento automatizados para gimnasios."
       tecnoImg={[
         {
           tecnoSrc:
@@ -43,7 +44,7 @@ import Proyecto from "../components/Proyecto.astro";
     />
     <Proyecto
       title="Neon Todo Machine"
-      desc="Un gestor de tareas"
+      desc="Autogestión de tareas con temática de neón."
       tecnoImg={[
         {
           tecnoSrc:
@@ -73,7 +74,7 @@ import Proyecto from "../components/Proyecto.astro";
     />
     <Proyecto
       title="Google Translate Clone"
-      desc="Clon del traductor de google"
+      desc="Clon del traductor de google realizado para investigar el desarrollo de la función de copiar al portapapeles y del habla."
       tecnoImg={[
         {
           tecnoSrc:
@@ -96,33 +97,23 @@ import Proyecto from "../components/Proyecto.astro";
       gradient="bg-gradient-to-r from-slate-800 via-stone-550 to-slate-600"
     />
     <Proyecto
-      title="Tic Tac Toe"
-      desc="Juego de TATETI"
+      title="Pokedex"
+      desc="Consumo de la pokeapi, vía una aplicación Andrioid desarrollada con React Native."
       tecnoImg={[
         {
           tecnoSrc:
             "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
           tecnoAlt: "React logo",
         },
-        {
-          tecnoSrc:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png",
-          tecnoAlt: "HTML5 Logo",
-        },
-        {
-          tecnoSrc:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/2048px-CSS3_logo.svg.png",
-          tecnoAlt: "CCS3 Logo",
-        },
       ]}
-      proySrc="/src/assets/TicTacToe.png"
-      proyAlt="TicTacToe Logo"
-      shadow="hover:shadow-slate-300/50 shadow-gray-900/50"
-      gradient="bg-gradient-to-r from-slate-800 via-stone-550 to-slate-600"
+      proySrc="/src/assets/pokeball.png"
+      proyAlt="Pokeball"
+      shadow="hover:shadow-red-500/50 shadow-red-900/50"
+      gradient="bg-gradient-to-r from-red-950 via-stone-650 to-stone-400"
     />
     <Proyecto
       title="Acme Dashboard"
-      desc="Dashboard del tutorial de NextJs"
+      desc="Dashboard de gestión de pagos del tutorial de next.js.org."
       tecnoImg={[
         {
           tecnoSrc:
@@ -145,19 +136,29 @@ import Proyecto from "../components/Proyecto.astro";
       gradient="bg-gradient-to-r from-blue-800 via-blue-550 to-cyan-800"
     />
     <Proyecto
-      title="Pokedex"
-      desc="Pokedex"
+      title="Tic Tac Toe"
+      desc="Juego de TATETI realizado para aprender sintaxis y lógica de componentes de ReactJs."
       tecnoImg={[
         {
           tecnoSrc:
             "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
           tecnoAlt: "React logo",
         },
+        {
+          tecnoSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png",
+          tecnoAlt: "HTML5 Logo",
+        },
+        {
+          tecnoSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/2048px-CSS3_logo.svg.png",
+          tecnoAlt: "CCS3 Logo",
+        },
       ]}
-      proySrc="/src/assets/pokeball.png"
-      proyAlt="Pokeball"
-      shadow="hover:shadow-red-500/50 shadow-red-900/50"
-      gradient="bg-gradient-to-r from-red-950 via-stone-650 to-stone-400"
+      proySrc="/src/assets/TicTacToe.png"
+      proyAlt="TicTacToe Logo"
+      shadow="hover:shadow-slate-300/50 shadow-gray-900/50"
+      gradient="bg-gradient-to-r from-slate-800 via-stone-550 to-slate-600"
     />
   </div>
 </section>

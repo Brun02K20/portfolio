@@ -1,4 +1,5 @@
 ---
+import "@fontsource/angkor";
 interface Props {
   title: string;
   desc: string;
@@ -19,7 +20,7 @@ const { title, desc, tecnoImg, proySrc, shadow, gradient, proyAlt } =
 >
   <img class="w-full h-48 rounded-t-lg" src={proySrc} alt={proyAlt} />
   <div class="p-4">
-    <h2 class="text-xl font-semibold mb-2">{title}</h2>
+    <h2 class="text-xl mb-2 font-angkor">{title}</h2>
     <p class="mb-4 text-lg">{desc}</p>
 
     <div class="flex">
