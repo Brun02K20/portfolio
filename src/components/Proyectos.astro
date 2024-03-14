@@ -2,54 +2,160 @@
 import Proyecto from "../components/Proyecto.astro";
 ---
 
-<section class="my-8">
+<section class="my-8" id="proyectos">
   <h4 class="text-3xl">Proyectos</h4>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8 mt-4">
     <Proyecto
       title="FlexTrainer"
       desc="Sistema de información de gestión de planes de entrenamiento para gimnasios"
-      tecnoSrc={["/public/favicon.svg"]}
+      tecnoImg={[
+        {
+          tecnoSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
+          tecnoAlt: "React Logo",
+        },
+        {
+          tecnoSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg",
+          tecnoAlt: "Bootstrap Logo",
+        },
+        {
+          tecnoSrc: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg",
+          tecnoAlt: "NodeJs Logo",
+        },
+        {
+          tecnoSrc: "https://www.svgrepo.com/show/330398/express.svg",
+          tecnoAlt: "ExpressJs Logo",
+        },
+        {
+          tecnoSrc: "https://cdn.worldvectorlogo.com/logos/mysql-6.svg",
+          tecnoAlt: "MySQL Logo",
+        },
+        {
+          tecnoSrc: "https://www.svgrepo.com/show/354333/sequelize.svg",
+          tecnoAlt: "Sequelize Logo",
+        },
+      ]}
       proySrc="/src/assets/FlexLogo.png"
       shadow="hover:shadow-red-500/50 shadow-red-900/50"
       gradient="bg-gradient-to-r from-red-950 via-red-150 to-red-950"
+      proyAlt="FlexTrainer Logo"
     />
     <Proyecto
       title="Neon Todo Machine"
       desc="Un gestor de tareas"
-      tecnoSrc={["/public/favicon.svg"]}
+      tecnoImg={[
+        {
+          tecnoSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png",
+          tecnoAlt: "HTML5 Logo",
+        },
+        {
+          tecnoSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/2048px-CSS3_logo.svg.png",
+          tecnoAlt: "CCS3 Logo",
+        },
+        {
+          tecnoSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png",
+          tecnoAlt: "JavaScript Logo",
+        },
+        {
+          tecnoSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
+          tecnoAlt: "ReactJs Logo",
+        },
+      ]}
       proySrc="/src/assets/TodoMachineLogo.png"
+      proyAlt="Neon Todo Machine Logo"
       shadow="hover:shadow-blue-500/50 shadow-blue-900/50"
       gradient="bg-gradient-to-r from-blue-950 via-blue-550 to-cyan-950"
     />
     <Proyecto
       title="Google Translate Clone"
       desc="Clon del traductor de google"
-      tecnoSrc={["/public/favicon.svg"]}
+      tecnoImg={[
+        {
+          tecnoSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
+          tecnoAlt: "React logo",
+        },
+        {
+          tecnoSrc: "https://cdn.worldvectorlogo.com/logos/typescript.svg",
+          tecnoAlt: "TypeScript logo",
+        },
+        {
+          tecnoSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg",
+          tecnoAlt: "Vite logo",
+        },
+      ]}
       proySrc="/src/assets/TranslateClone.png"
+      proyAlt="Clone Logo"
       shadow="hover:shadow-slate-300/50 shadow-gray-900/50"
       gradient="bg-gradient-to-r from-slate-800 via-stone-550 to-slate-600"
     />
     <Proyecto
       title="Tic Tac Toe"
       desc="Juego de TATETI"
-      tecnoSrc={["/public/favicon.svg"]}
+      tecnoImg={[
+        {
+          tecnoSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
+          tecnoAlt: "React logo",
+        },
+        {
+          tecnoSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png",
+          tecnoAlt: "HTML5 Logo",
+        },
+        {
+          tecnoSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/2048px-CSS3_logo.svg.png",
+          tecnoAlt: "CCS3 Logo",
+        },
+      ]}
       proySrc="/src/assets/TicTacToe.png"
+      proyAlt="TicTacToe Logo"
       shadow="hover:shadow-slate-300/50 shadow-gray-900/50"
       gradient="bg-gradient-to-r from-slate-800 via-stone-550 to-slate-600"
     />
     <Proyecto
       title="Acme Dashboard"
       desc="Dashboard del tutorial de NextJs"
-      tecnoSrc={["/public/favicon.svg"]}
+      tecnoImg={[
+        {
+          tecnoSrc:
+            "https://static-00.iconduck.com/assets.00/nextjs-icon-1024x1024-0nli97e5.png",
+          tecnoAlt: "NextJs logo",
+        },
+        {
+          tecnoSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/320px-Tailwind_CSS_Logo.svg.png",
+          tecnoAlt: "TailwindCSS logo",
+        },
+        {
+          tecnoSrc: "https://cdn.worldvectorlogo.com/logos/typescript.svg",
+          tecnoAlt: "TypeScript logo",
+        },
+      ]}
       proySrc="/src/assets/AcmeDashboard.png"
+      proyAlt="Acme Logo"
       shadow="hover:shadow-blue-500/50 shadow-blue-900/50"
       gradient="bg-gradient-to-r from-blue-800 via-blue-550 to-cyan-800"
     />
     <Proyecto
       title="Pokedex"
       desc="Pokedex"
-      tecnoSrc={["/public/favicon.svg"]}
+      tecnoImg={[
+        {
+          tecnoSrc:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
+          tecnoAlt: "React logo",
+        },
+      ]}
       proySrc="/src/assets/pokeball.png"
+      proyAlt="Pokeball"
       shadow="hover:shadow-red-500/50 shadow-red-900/50"
       gradient="bg-gradient-to-r from-red-950 via-stone-650 to-stone-400"
     />
