@@ -1,15 +1,28 @@
+---
+import Linkedin from "../icons/Linkedin.astro";
+import GitHub from "../icons/GitHub.astro";
+import Gmail from "../icons/Gmail.astro";
+---
+
 <article class="flex flex-col items-center md:flex-row border-lime-200 my-8">
   <img
     src="/src/assets/foto.png"
     class="w-48 h-auto rounded-full md:mr-8 md:mb-0"
     alt="Profile Photo"
   />
-  <div class="md:ml-8">
-    <h2 class="text-red-400">Hola! Soy Bruno Virinni</h2>
-    <h3 class="text-yellow-400">
-      Analista Universitario en Sistemas | FullStack Developer
-    </h3>
-    <p>+2 años de experiencia como frontend developer</p>
-    <p>+1 año de experiencia como fullstack developer</p>
+  <div class="md:ml-8 flex flex-col">
+    <div>
+      <h2 class="text-red-400">Hola! Soy Bruno Virinni</h2>
+      <h3 class="text-yellow-400">
+        Analista Universitario en Sistemas | FullStack Developer
+      </h3>
+      <p>+2 años de experiencia como frontend developer</p>
+      <p>+1 año de experiencia como fullstack developer</p>
+    </div>
+    <div class="flex items-center mt-4">
+      <Linkedin />
+      <GitHub />
+      <Gmail />
+    </div>
   </div>
 </article>

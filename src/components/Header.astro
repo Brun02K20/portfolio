@@ -14,17 +14,17 @@
     <p
       class="text-green-600 font-semibold text-base hover:text-green-300 hover:cursor-pointer mr-4"
     >
-      <a href="#experiencia">Experiencia</a>
+      <a href="#experiencia" class="scroll-link">Experiencia</a>
     </p>
     <p
       class="text-green-600 font-semibold text-base hover:text-green-300 hover:cursor-pointer mr-4"
     >
-      <a href="#conocimientos">Conocimientos</a>
+      <a href="#conocimientos" class="scroll-link">Conocimientos</a>
     </p>
     <p
       class="text-green-600 font-semibold text-base hover:text-green-300 hover:cursor-pointer"
     >
-      <a href="#proyectos">Proyectos</a>
+      <a href="#proyectos" class="scroll-link">Proyectos</a>
     </p>
   </div>
 </nav>
@@ -93,8 +93,20 @@
     const enlacesMenuHorizontal =
       document.querySelectorAll(".flex a[href^='#']");
     enlacesMenuHorizontal.forEach(function (enlace) {
-      enlace.addEventListener("click", function () {
-        cerrarMenu();
+      enlace.addEventListener("click", function (event) {
+        event.preventDefault(); // Evita el comportamiento predeterminado de los enlaces
+
+        const targetId = this.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          const offsetTop = targetElement.offsetTop;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: "smooth", // Hace que el desplazamiento sea suave
+          });
+          cerrarMenu(); // Cierra el menú después de hacer clic en un enlace
+        }
       });
     });
   });
