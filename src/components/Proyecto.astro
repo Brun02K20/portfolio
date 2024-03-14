@@ -9,15 +9,25 @@ interface Props {
   shadow: string;
   gradient: string;
   status: string;
+  url: string;
 }
 
-const { title, desc, tecnoImg, proySrc, shadow, gradient, proyAlt, status } =
-  Astro.props;
+const {
+  title,
+  desc,
+  tecnoImg,
+  proySrc,
+  shadow,
+  gradient,
+  proyAlt,
+  status,
+  url,
+} = Astro.props;
 ---
 
 <!-- hover:shadow-blue-500/50 shadow-blue-900/50 --><!-- from-red-950 via-red-150 to-grey-50 -->
 <div
-  class=` shadow-lg ${shadow} ${gradient} rounded-lg flex flex-col text-white`
+  class={`shadow-lg ${shadow} ${gradient} rounded-lg flex flex-col text-white`}
 >
   <img class="w-full h-48 rounded-t-lg" src={proySrc} alt={proyAlt} />
   <div class="p-4 relative">
@@ -39,5 +49,13 @@ const { title, desc, tecnoImg, proySrc, shadow, gradient, proyAlt, status } =
         ))
       }
     </div>
+  </div>
+  <!-- Botones -->
+  <div class="flex justify-center mt-2 mb-4">
+    <button
+      class="bg-gradient-to-r from-purple-900 to-pink-800 hover:from-pink-800 hover:to-purple-900 hover:shadow-indigo-900 text-white py-1 px-2 rounded-full shadow-md hover:shadow-lg"
+    >
+      <a href={url} target="_blank">Ver más</a>
+    </button>
   </div>
 </div>
