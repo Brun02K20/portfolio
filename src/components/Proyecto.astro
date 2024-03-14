@@ -8,9 +8,10 @@ interface Props {
   proyAlt: string;
   shadow: string;
   gradient: string;
+  status: string;
 }
 
-const { title, desc, tecnoImg, proySrc, shadow, gradient, proyAlt } =
+const { title, desc, tecnoImg, proySrc, shadow, gradient, proyAlt, status } =
   Astro.props;
 ---
 
@@ -19,10 +20,16 @@ const { title, desc, tecnoImg, proySrc, shadow, gradient, proyAlt } =
   class=` shadow-lg ${shadow} ${gradient} rounded-lg flex flex-col text-white`
 >
   <img class="w-full h-48 rounded-t-lg" src={proySrc} alt={proyAlt} />
-  <div class="p-4">
-    <h2 class="text-xl mb-2 font-angkor">{title}</h2>
+  <div class="p-4 relative">
+    <!-- Añadimos relative para que la posición de la píldora sea relativa a este contenedor -->
+    <!-- Píldora -->
+    <div
+      class="absolute top-2 right-2 bg-transparent border border-black text-black rounded-full px-3 py-1 text-xs font-bold"
+    >
+      {status}
+    </div>
+    <h2 class="text-xl mb-2 font-angkor w-3/4">{title}</h2>
     <p class="mb-4 text-lg">{desc}</p>
-
     <div class="flex">
       {
         tecnoImg.map((img, index) => (
