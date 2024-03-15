@@ -1,5 +1,5 @@
 ---
-import "@fontsource/twinkle-star";
+import "@fontsource/oswald";
 import TecnoIcon from "./TecnoIcon.astro";
 interface Props {
   color: string;
@@ -11,9 +11,7 @@ const { color, category, icons } = Astro.props;
 ---
 
 <div class="p-4 shadow-inner rounded-xl shadow-indigo-500/50">
-  <h4
-    class=`text-center my-4 font-semibold ${color} text-3xl font-twinkle-star`
-  >
+  <h4 class=`text-center my-4 font-semibold ${color} text-3xl font-oswald`>
     {category}
   </h4>
   <div class="grid grid-cols-3 gap-4">
