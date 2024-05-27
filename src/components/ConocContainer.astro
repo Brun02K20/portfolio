@@ -1,23 +1,24 @@
 ---
 import "@fontsource/oswald";
 import TecnoIcon from "./TecnoIcon.astro";
+import ConocimientoIcon from "./ConocimientoIcon.astro";
 interface Props {
   color: string;
   category: string;
-  icons: { src: string; name: string; alt: string }[];
+  icons: { svg: string; name: string }[];
 }
 
 const { color, category, icons } = Astro.props;
 ---
 
 <div class="p-4 shadow-inner rounded-xl shadow-indigo-500/50">
-  <h4 class=`text-center my-4 font-semibold ${color} text-3xl font-oswald`>
+  <h4 class=`my-4 font-semibold ${color} text-3xl font-oswald`>
     {category}
   </h4>
-  <div class="grid grid-cols-3 gap-4">
+  <div class="grid grid-cols-3 gap-1 text-center justify-items-center">
     {
-      icons.map((icon) => (
-        <TecnoIcon src={icon.src} name={icon.name} alt={icon.alt} />
+      icons.map((icon, index) => (
+        <ConocimientoIcon svg={icon.svg} name={icon.name} />
       ))
     }
   </div>

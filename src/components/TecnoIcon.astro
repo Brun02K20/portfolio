@@ -1,14 +1,13 @@
 ---
+// Remove the following line:
+// import type { HTMLAttributes } from "astro/dist/types/astro";
 interface Props {
-  src: string;
-  name: string;
-  alt: string;
+  svg: string;
 }
 
-const { src, name, alt } = Astro.props;
+const { svg } = Astro.props;
 ---
 
-<div class="">
-  <img src={src} aria-hidden="false" alt={alt} class="w-10 h-10 mx-auto" />
-  <p class="text-center text-base">{name}</p>
+<div class="text-center m-2">
+  <Fragment set:html={svg} />
 </div>

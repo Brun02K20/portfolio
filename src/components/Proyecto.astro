@@ -1,9 +1,10 @@
 ---
 import "@fontsource/angkor";
+import TecnoIcon from "./TecnoIcon.astro";
 interface Props {
   title: string;
   desc: string;
-  tecnoImg: { tecnoSrc: string; tecnoAlt: string }[];
+  tecnoImg: { svg: string }[];
   proySrc: string;
   proyAlt: string;
   shadow: string;
@@ -40,14 +41,8 @@ const {
     </div>
     <h2 class="text-xl mb-2 font-angkor w-3/4">{title}</h2>
     <p class="mb-4 text-lg">{desc}</p>
-    <div class="flex">
-      {
-        tecnoImg.map((img, index) => (
-          <div class="w-12 h-12 mx-2 overflow-hidden">
-            <img src={img.tecnoSrc} alt={img.tecnoAlt} />
-          </div>
-        ))
-      }
+    <div class="grid grid-cols-4 gap-0 text-center justify-items-center">
+      {tecnoImg.map((icon, index) => <TecnoIcon svg={icon.svg} />)}
     </div>
   </div>
   <!-- Botones -->

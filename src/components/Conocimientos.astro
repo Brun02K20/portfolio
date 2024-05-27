@@ -1,11 +1,12 @@
 ---
 import ConocimientoContainer from "../components/ConocContainer.astro";
 import "@fontsource/oswald";
+import svgs from "../svgs/svgs";
 ---
 
 <section class="my-8" id="conocimientos">
   <h4
-    class="text-4xl font-oswald font-semibold drop-shadow-[2px_2px_var(--tw-shadow-color)] shadow-blue-500"
+    class="text-4xl font-oswald font-semibold drop-shadow-[2px_2px_var(--tw-shadow-color)] shadow-blue-500 underline"
   >
     Conocimientos
   </h4>
@@ -15,39 +16,44 @@ import "@fontsource/oswald";
       category="Frontend"
       icons={[
         {
-          src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png",
+          svg: svgs.html,
           name: "HTML5",
-          alt: "HTML5 logo",
         },
         {
-          src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/2048px-CSS3_logo.svg.png",
+          svg: svgs.css,
           name: "CSS3",
-          alt: "CSS3 logo",
         },
         {
-          src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png",
-          name: "JavaScript",
-          alt: "JavaScript logo",
+          svg: svgs.js,
+          name: "Javascript",
         },
         {
-          src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
-          name: "ReactJs",
-          alt: "React logo",
+          svg: svgs.react,
+          name: "React",
         },
         {
-          src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
-          name: "React Native",
-          alt: "React Native logo",
+          svg: svgs.react,
+          name: "R. Native",
         },
         {
-          src: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg",
+          svg: svgs.bootstrap,
           name: "Bootstrap",
-          alt: "Bootstrap logo",
         },
         {
-          src: "https://seeklogo.com/images/M/materialize-logo-0FCAD8A6F8-seeklogo.com.png",
-          name: "Materialize.css",
-          alt: "Materialize.css logo",
+          svg: svgs.tailwind,
+          name: "Tailwind",
+        },
+        {
+          svg: svgs.materialize,
+          name: "Materialize",
+        },
+        {
+          svg: svgs.sass,
+          name: "Sass",
+        },
+        {
+          svg: svgs.expo,
+          name: "Expo",
         },
       ]}
     />
@@ -56,34 +62,32 @@ import "@fontsource/oswald";
       category="Backend"
       icons={[
         {
-          src: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg",
+          svg: svgs.node,
           name: "NodeJS",
-          alt: "NodeJS logo",
         },
         {
-          src: "https://www.svgrepo.com/show/330398/express.svg",
-          name: "ExpressJS",
-          alt: "ExpressJS logo",
+          svg: svgs.express,
+          name: "Express",
         },
         {
-          src: "https://cdn.worldvectorlogo.com/logos/mysql-6.svg",
+          svg: svgs.mysql,
           name: "MySQL",
-          alt: "MySQL logo",
         },
         {
-          src: "https://www.svgrepo.com/show/354333/sequelize.svg",
+          svg: svgs.sequelize,
           name: "Sequelize",
-          alt: "Sequelize logo",
         },
         {
-          src: "https://seeklogo.com/images/J/json-web-tokens-jwt-io-logo-C003DEC47A-seeklogo.com.png",
-          name: "Jsonwebtoken",
-          alt: "Jsonwebtoken logo",
+          svg: svgs.jwt,
+          name: "JWT",
         },
         {
-          src: "https://www.svgrepo.com/show/331760/sql-database-generic.svg",
+          svg: svgs.sqlite,
+          name: "Sqlite3",
+        },
+        {
+          svg: svgs.sql,
           name: "SQL",
-          alt: "SQL logo",
         },
       ]}
     />
@@ -92,29 +96,32 @@ import "@fontsource/oswald";
       category="Herramientas"
       icons={[
         {
-          src: "https://iconape.com/wp-content/png_logo_vector/git-icon.png",
+          svg: svgs.postman,
+          name: "Postman",
+        },
+        {
+          svg: svgs.git,
           name: "Git",
-          alt: "Git logo",
         },
         {
-          src: "https://cdn-icons-png.flaticon.com/512/2111/2111612.png",
+          svg: svgs.github,
           name: "GitHub",
-          alt: "GitHub logo",
         },
         {
-          src: "https://cdn.worldvectorlogo.com/logos/visual-studio-code-1.svg",
-          name: "VSCode",
-          alt: "VSCode logo",
+          svg: svgs.vite,
+          name: "Vite",
         },
         {
-          src: "https://www.svgrepo.com/show/361365/terminal-bash.svg",
-          name: "Terminal",
-          alt: "Terminal logo",
+          svg: svgs.vercel,
+          name: "Vercel",
         },
         {
-          src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/540px-Npm-logo.svg.png",
+          svg: svgs.npm,
           name: "npm",
-          alt: "npm logo",
+        },
+        {
+          svg: svgs.vsc,
+          name: "VSCode",
         },
       ]}
     />
@@ -123,34 +130,32 @@ import "@fontsource/oswald";
       category="Aprendiendo"
       icons={[
         {
-          src: "https://astro.build/assets/press/astro-icon-light-gradient.png",
+          svg: svgs.astro,
           name: "Astro",
-          alt: "Astro logo",
         },
         {
-          src: "https://cdn.worldvectorlogo.com/logos/typescript.svg",
-          name: "TypeScript",
-          alt: "TypeScript logo",
+          svg: svgs.ts,
+          name: "Typescript",
         },
         {
-          src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png",
+          svg: svgs.next,
+          name: "NextJS",
+        },
+        {
+          svg: svgs.python,
           name: "Python",
-          alt: "Python logo",
         },
         {
-          src: "https://static-00.iconduck.com/assets.00/nextjs-icon-1024x1024-0nli97e5.png",
-          name: "NextJs",
-          alt: "NextJs logo",
+          svg: svgs.java,
+          name: "Java",
         },
         {
-          src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/320px-Tailwind_CSS_Logo.svg.png",
-          name: "TailwindCSS",
-          alt: "TailwindCSS logo",
+          svg: svgs.spring,
+          name: "Spring",
         },
         {
-          src: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg",
-          name: "Vite",
-          alt: "Vite logo",
+          svg: svgs.swagger,
+          name: "Swagger",
         },
       ]}
     />
