@@ -4,9 +4,31 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  title: 'Bruno Virinni | Fullstack Developer',
+  description: 'Professional portfolio of Bruno Virinni, Fullstack Developer specialized in modern web technologies. Check out my projects and experience.',
+  keywords: ['Bruno Virinni', 'Fullstack Developer', 'React', 'Next.js', 'Portfolio', 'JavaScript', 'Web Developer Argentina'],
+  authors: [{ name: 'Bruno Virinni', url: 'https://brunovirinni.vercel.app' }],
+  creator: 'Bruno Virinni',
+  robots: 'index, follow',
+  openGraph: {
+    title: 'Bruno Virinni | Fullstack Developer',
+    description: 'Explore the portfolio of Bruno Virinni, Fullstack Developer based in Argentina.',
+    url: 'https://brunovirinni.vercel.app',
+    siteName: 'Bruno Virinni Portfolio',
+    locale: 'en_US, es_AR',
+    type: 'website',
+    images: [
+      {
+        url: 'https://brunovirinni.vercel.app/assets/profile.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Bruno Virinni Portfolio Screenshot',
+      },
+    ],
+  },
+  icons: {
+    icon: '/images/icon.png',
+  },
 }
 
 export default function RootLayout({
