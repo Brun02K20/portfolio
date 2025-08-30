@@ -2,6 +2,44 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const experiences = [
   {
+    period: "08.2024 - present",
+    position: "Sr. FullStack Developer; Team Leader & CoFounder",
+    company: "CodeandoWeb - Digital Business Solutions",
+    description: (
+      <ul className="list-disc list-inside mb-4 text-gray-100 text-sm">
+        <li>
+          Integrate third-party services into existing systems such as payment
+          gateways, WhatsApp, file servers and others.
+        </li>
+        <li>
+          I handle requirements gathering from clients, business solution design, and deployment on servers.
+        </li>
+      </ul>
+    ),
+    // rating: "8/9/10",
+    technologies: [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "JWT",
+      "MySQL",
+      "Sequelize",
+      "Supabase",
+      "Firesbase",
+      "Git",
+      "GitHub",
+      "GitHub Copilot",
+      "OpenAI",
+      "Postman",
+      "VSCode",
+      "SCRUM",
+      "KANBAN"
+    ],
+  },
+  {
     period: "06.2024 - present",
     position: "Ssr. FullStack Developer & Team Leader",
     company: "EngTrade - Servicios de Consultoría",
@@ -51,7 +89,9 @@ const experiences = [
       "OpenAI",
       "Postman",
       "VSCode",
-      "PyCharm"
+      "PyCharm",
+      "SCRUM",
+      "KANBAN"
     ],
   },
   {
