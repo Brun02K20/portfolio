@@ -4,10 +4,12 @@ import { Button } from "@/components/ui/button"
 import { Download, Github, Mail, FolderOpen, Linkedin } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
+import { useTranslation } from "react-i18next"
 
 export default function About() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { t } = useTranslation()
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
@@ -32,18 +34,12 @@ export default function About() {
             />
           </div>
 
-          <h4 className="text-2xl font-bold text-white mb-6">Bruno Virinni - Fullstack Developer</h4>
+          <h4 className="text-2xl font-bold text-white mb-6">{t("about.role")}</h4>
 
           <div className="max-w-3xl mx-auto mb-8">
-            <p className="text-lg text-gray-300 leading-relaxed mb-2">
-              I'm a Fullstack Developer with over four years of experience in software development and a University Information Systems Developer Analyst, a graduate of the UTN, currently in my final year of Information Systems Engineering.
-            </p>
-            <p className="text-lg text-gray-300 leading-relaxed mb-2">
-              Throughout my career, I've worked on various projects on both the backend and frontend, utilizing modern technologies to build efficient, scalable, and user-centric solutions. I stand out for my ability to quickly adapt to new environments and languages, and for my mindset focused on problem-solving and continuous improvement.
-            </p>
-            <p className="text-lg text-gray-300 leading-relaxed">
-              In my free time I enjoy exercising, spending time with friends, and playing video games.
-            </p>
+            <p className="text-lg text-gray-300 leading-relaxed mb-2">{t("about.p1")}</p>
+            <p className="text-lg text-gray-300 leading-relaxed mb-2">{t("about.p2")}</p>
+            <p className="text-lg text-gray-300 leading-relaxed">{t("about.p3")}</p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-4">
@@ -55,7 +51,7 @@ export default function About() {
             >
               <Button className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 hover:cursor-pointer shadow-sm shadow-indigo-500/50 hover:shadow-md transition-all duration-300">
               <Download className="h-4 w-4" />
-              Download CV
+              {t("about.downloadCv")}
               </Button>
             </a>
 
@@ -85,7 +81,7 @@ export default function About() {
               onClick={() => scrollToSection("#contact")}
             >
               <Mail className="h-4 w-4" />
-              Contact Me
+              {t("about.contactMe")}
             </Button>
             <Button
               variant="outline"
@@ -93,7 +89,7 @@ export default function About() {
               onClick={() => scrollToSection("#projects")}
             >
               <FolderOpen className="h-4 w-4" />
-              Projects
+              {t("about.projects")}
             </Button>
           </div>
         </div>

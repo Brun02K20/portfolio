@@ -3,19 +3,20 @@
 import { useState } from "react"
 import { Menu, X, User, Briefcase, Code, FolderOpen, GraduationCap, Mail, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useTranslation } from "react-i18next"
 
 const navigation = [
-  { name: "About", href: "#about", icon: User },
-  { name: "Experience", href: "#experience", icon: Briefcase },
-  { name: "Skills", href: "#skills", icon: Code },
-  { name: "Projects", href: "#projects", icon: FolderOpen },
-  { name: "Education", href: "#education", icon: GraduationCap },
-  { name: "Contact", href: "#contact", icon: Mail },
+  { key: "header.about", href: "#about", icon: User },
+  { key: "header.experience", href: "#experience", icon: Briefcase },
+  { key: "header.skills", href: "#skills", icon: Code },
+  { key: "header.projects", href: "#projects", icon: FolderOpen },
+  { key: "header.education", href: "#education", icon: GraduationCap },
+  { key: "header.contact", href: "#contact", icon: Mail },
 ]
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [language, setLanguage] = useState("en")
+  const { t, i18n } = useTranslation()
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
@@ -27,9 +28,9 @@ export default function Header() {
     setMobileMenuOpen(false)
   }
 
-  // const toggleLanguage = () => {
-  //   setLanguage((prev) => (prev === "en" ? "es" : "en"))
-  // }
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === "en" ? "es" : "en")
+  }
 
   return (
     <>
@@ -42,21 +43,21 @@ export default function Header() {
             </div>
 
             <div className="flex items-center space-x-8">
-              {/* <button
+              <button
                 onClick={toggleLanguage}
-                className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+                className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium hover:cursor-pointer"
               >
                 <Globe className="h-4 w-4" />
-                {language.toUpperCase()}
-              </button> */}
+                {i18n.language === "en" ? "ES" : "EN"}
+              </button>
               {navigation.map((item) => (
                 <button
-                  key={item.name}
+                  key={item.key}
                   onClick={() => scrollToSection(item.href)}
                   className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium hover:cursor-pointer hover:underline"
                 >
                   <item.icon className="h-4 w-4" />
-                  {item.name}
+                  {t(item.key)}
                 </button>
               ))}
             </div>
@@ -86,23 +87,23 @@ export default function Header() {
             </div>
             <nav className="">
               <ul role="list" className="space-y-1">
-                {/* <li>
+                <li>
                   <button
                     onClick={toggleLanguage}
                     className="group flex w-full gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-300 hover:text-white hover:bg-gray-700 transition-colors"
                   >
                     <Globe className="h-6 w-6 shrink-0" />
-                    {language.toUpperCase()}
+                    {i18n.language === "en" ? "ES" : "EN"}
                   </button>
-                </li> */}
+                </li>
                 {navigation.map((item) => (
-                  <li key={item.name}>
+                  <li key={item.key}>
                     <button
                       onClick={() => scrollToSection(item.href)}
                       className="group flex w-full gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-400 hover:text-white hover:bg-gray-700 transition-colors hover:cursor-pointer"
                     >
                       <item.icon className="h-6 w-6 shrink-0" />
-                      {item.name}
+                      {t(item.key)}
                     </button>
                   </li>
                 ))}

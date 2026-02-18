@@ -1,13 +1,15 @@
+"use client"
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 const projects = [
   {
-    title: "DoctorFY - Medical Platform",
-    description:
-      "Medical appointment information system within 72 hours. More than 200 users on launch day. Featuring appointment scheduling, patient dashboard, waiting room system, and consultation management for healthcare professionals. Work done for ENGTRADE.",
+    titleKey: "projects.items.doctorfyTitle",
+    descriptionKey: "projects.items.doctorfyDesc",
     image: "/images/doctor-ty.png",
     technologies: ["React.js", "Express", "Node.js", "MySQL", "Sequelize", "Materialize CSS", "JWT", "Payway API", "WAAPI", "Email Integration"],
     liveUrl: "https://doctorfy.com.ar/",
@@ -16,9 +18,8 @@ const projects = [
   },
   
   {
-    title: "Flex Trainer",
-    description:
-      "Fitness tracking application with workout routines, progress monitoring, tutorial videos, QR scanning, and personalized training plans. Perfect for gym enthusiasts and fitness professionals.",
+    titleKey: "projects.items.flexTitle",
+    descriptionKey: "projects.items.flexDesc",
     image: "/images/flex-trainer.png",
     technologies: ["React.js", "Firebase", "Bootstrap", "Node.js", "Express.js", "MySQL", "Sequelize", "JWT", "GitHub Copilot", "Email Integration"],
     liveUrl: "https://flextrainer-frontend-web.vercel.app",
@@ -26,9 +27,8 @@ const projects = [
     githubUrl2: "https://github.com/Brun02K20/flex_2",
   },
   {
-    title: "Kokus - Guest Experience App",
-    description:
-      "Guest experience application for hostels, offering personalized recommendations, local insights, and activities. Enhances guest satisfaction and engagement.",
+    titleKey: "projects.items.kokusTitle",
+    descriptionKey: "projects.items.kokusDesc",
     image: "/images/kokus.png",
     technologies: ["Next.js", "AWS", "TailwindCSS", "Nest.js", "MySQL", "php", "TypeORM", "JWT", "GitHub Copilot", "Email Integration", "Mercado Pago API", "OpenAI API", "Google Maps API", "Arduino Integration"],
     liveUrl: "https://kokus.byalvear.com",
@@ -54,9 +54,8 @@ const projects = [
   //   githubUrl: "https://github.com/Brun02K20/tetris",
   // },
   {
-    title: "Coffee To Go - Restaurant Website",
-    description:
-      "Modern coffee shop website with online ordering system, menu display, location services, and social media integration. Features clean design and mobile-responsive layout. Work done for ARRE.",
+    titleKey: "projects.items.coffeeTitle",
+    descriptionKey: "projects.items.coffeeDesc",
     image: "/images/coffee-website.png",
     technologies: ["HTML", "CSS", "Bootstrap", "JavaScript", "Nodejs", "Express.js", "MySQL", "Sequelize", "JWT"],
     liveUrl: "https://arremiami.vercel.app/index.html",
@@ -64,9 +63,8 @@ const projects = [
     githubUrl2: "https://github.com/Brun02K20/arre_backend"
   },
   {
-    title: "Cardelli - Tire shop",
-    description:
-      "Modern tire shop website with online ordering system, menu display, location services, and social media integration. Features clean design and mobile-responsive layout. Work done for Cardelli.",
+    titleKey: "projects.items.cardelliTitle",
+    descriptionKey: "projects.items.cardelliDesc",
     image: "/images/cardelli.png",
     technologies: ["HTML", "CSS", "Bootstrap", "JavaScript", "Nodejs", "Express.js", "MySQL", "Sequelize", "JWT"],
     liveUrl: "https://cardelli-neumaticos.vercel.app",
@@ -74,9 +72,8 @@ const projects = [
     githubUrl2: "https://github.com/Brun02K20/cardelli_backend"
   },
   {
-    title: "MCL - Car shop",
-    description:
-      "Modern car shop website with online ordering system, menu display, location services, and social media integration. Features clean design and mobile-responsive layout. Work done for MCL.",
+    titleKey: "projects.items.mclTitle",
+    descriptionKey: "projects.items.mclDesc",
     image: "/images/mcl.png",
     technologies: ["HTML", "CSS", "Bootstrap", "JavaScript", "Nodejs", "Express.js", "MySQL", "Sequelize", "JWT"],
     liveUrl: "https://mcl-automotores.vercel.app",
@@ -84,9 +81,8 @@ const projects = [
     githubUrl2: "https://github.com/Brun02K20/mcl_backend"
   },
   {
-    title: "Alvarez - Dry construction",
-    description:
-      "Modern dry construction website with online ordering system, menu display, location services, and social media integration. Features clean design and mobile-responsive layout. Work done for Alvarez.",
+    titleKey: "projects.items.alvarezTitle",
+    descriptionKey: "projects.items.alvarezDesc",
     image: "/images/alvarez.png",
     technologies: ["HTML", "CSS", "Bootstrap", "JavaScript", "Nodejs", "Express.js", "MySQL", "Sequelize", "JWT"],
     liveUrl: "https://alvarezconstruccionenseco.vercel.app",
@@ -94,18 +90,16 @@ const projects = [
     githubUrl2: "https://github.com/Brun02K20/alvarez_back"
   },
   {
-    title: "Course Management System",
-    description:
-      "Educational platform for managing academic courses, subjects, and student progress. Features organized curriculum structure and progress tracking.",
+    titleKey: "projects.items.courseTitle",
+    descriptionKey: "projects.items.courseDesc",
     image: "/images/course-manager.png",
     technologies: ["React.js", "Node.js", "Bootstrap", "Express.js", "Resend API"],
     liveUrl: "https://que-curso-juanliendo-brunovir.vercel.app",
     githubUrl: "https://github.com/juan-lien-do/que-curso",
   },
   {
-    title: "Currency Exchange Platform",
-    description:
-      "Financial application for currency exchange rates, historical data analysis, and real-time market information with Argentine peso focus.",
+    titleKey: "projects.items.currencyTitle",
+    descriptionKey: "projects.items.currencyDesc",
     image: "/images/currency-app.png",
     technologies: ["React Native", "Expo", "Chart.js", "DolarAPI", "Tailwind CSS"],
     liveUrl: "#",
@@ -124,11 +118,13 @@ const projects = [
 ];
 
 export default function Projects() {
+  const { t } = useTranslation();
+
   return (
     <section id="projects" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-800">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-white mb-16">
-          Projects
+          {t("projects.title")}
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -140,7 +136,7 @@ export default function Projects() {
               <div className="relative h-48">
                 <Image
                   src={project.image || "/placeholder.svg"}
-                  alt={project.title}
+                  alt={project.titleKey ? t(project.titleKey) : "Project image"}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -149,11 +145,11 @@ export default function Projects() {
 
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-3 text-white">
-                  {project.title}
+                  {project.titleKey ? t(project.titleKey) : ""}
                 </h3>
 
                 <p className="text-gray-300 mb-4 text-sm leading-relaxed">
-                  {project.description}
+                  {project.descriptionKey ? t(project.descriptionKey) : ""}
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -174,7 +170,7 @@ export default function Projects() {
                   >
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                       <ExternalLink className="h-3 w-3" />
-                      Live Site
+                      {t("projects.liveSite")}
                     </a>
                   </Button>
                   <Button
@@ -184,7 +180,7 @@ export default function Projects() {
                   >
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                       <Github className="h-3 w-3" />
-                      {project.githubUrl2 ? "Frontend" : "Github"}
+                      {project.githubUrl2 ? t("projects.frontend") : t("projects.github")}
                     </a>
                   </Button>
                   {project.githubUrl2 && (
@@ -195,7 +191,7 @@ export default function Projects() {
                   >
                     <a href={project.githubUrl2} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                       <Github className="h-3 w-3" />
-                      Backend
+                      {t("projects.backend")}
                     </a>
                   </Button>
                   )}

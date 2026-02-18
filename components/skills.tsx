@@ -1,4 +1,7 @@
+"use client"
+
 import { Card, CardContent } from "@/components/ui/card"
+import { useTranslation } from "react-i18next"
 
 // importo iconos
 // Frontend
@@ -56,7 +59,7 @@ import ClaudeAI from "@/icons/Claude"
 
 const skillCategories = [
   {
-    title: "Frontend",
+    titleKey: "skills.frontend",
     skills: [
       { name: "React", icon: <React /> },
       { name: "Astro", icon: <Astro /> },
@@ -71,7 +74,7 @@ const skillCategories = [
     ],
   },
   {
-    title: "Backend",
+    titleKey: "skills.backend",
     skills: [
       { name: "Node.js", icon: <Nodejs /> },
       { name: "Express", icon: <Expressjs /> },
@@ -84,7 +87,7 @@ const skillCategories = [
     ],
   },
   {
-    title: "Database",
+    titleKey: "skills.database",
     skills: [
       { name: "MySQL", icon: <MySQL /> },
       { name: "PostgreSQL", icon: <PostgreSQL /> },
@@ -94,7 +97,7 @@ const skillCategories = [
     ],
   },
   {
-    title: "Tools & AI",
+    titleKey: "skills.tools",
     skills: [
       { name: "Git", icon: <Git /> },
       { name: "GitHub", icon: <GitHub /> },
@@ -112,7 +115,7 @@ const skillCategories = [
     ],
   },
   {
-    title: "Cloud & DevOps",
+    titleKey: "skills.cloud",
     skills: [
       { name: "Docker", icon: <Docker /> },
       { name: "Linux", icon: <Linux /> },
@@ -123,7 +126,7 @@ const skillCategories = [
     ],
   },
   {
-    title: "Learning",
+    titleKey: "skills.learning",
     skills: [
       { name: "Next.js", icon: <Nextjs /> },
       { name: "C#", icon: <C /> },
@@ -134,16 +137,18 @@ const skillCategories = [
 ]
 
 export default function Skills() {
+  const { t } = useTranslation()
+
   return (
     <section id="skills" className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-white mb-16">Skills</h2>
+        <h2 className="text-3xl font-bold text-center text-white mb-16">{t("skills.title")}</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
             <Card key={index} className="bg-gray-800 border-gray-700 text-white">
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-6 text-red-400">{category.title}</h3>
+                <h3 className="text-xl font-bold mb-6 text-red-400">{t(category.titleKey)}</h3>
 
                 <div className="grid grid-cols-3 xl:grid-cols-4 gap-4">
                   {category.skills.map((skill, skillIndex) => (

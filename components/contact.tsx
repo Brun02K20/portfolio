@@ -20,8 +20,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -64,10 +67,10 @@ export default function Contact() {
     const result = await response.json();
 
     if (result.success) {
-      setDialogMessage("Message sent successfully!");
+      setDialogMessage(t("contact.success"));
       setFormData({ name: "", email: "", message: "" });
     } else {
-      setDialogMessage("Error sending message. Please try again later.");
+      setDialogMessage(t("contact.error"));
     }
     setShowDialog(true);
 
@@ -89,7 +92,7 @@ export default function Contact() {
     <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-white mb-16">
-          Contact Me
+          {t("contact.title")}
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -97,12 +100,10 @@ export default function Contact() {
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">
-                Get In Touch
+                {t("contact.getInTouch")}
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                I'm always interested in new opportunities and exciting
-                projects. Whether you have a question or just want to say hi,
-                feel free to reach out!
+                {t("contact.intro")}
               </p>
             </div>
 
@@ -113,7 +114,7 @@ export default function Contact() {
                   <Mail className="h-6 w-6 text-white" />
                 </div>
                 <div className="text-center md:text-left">
-                  <p className="font-semibold text-white">Email</p>
+                  <p className="font-semibold text-white">{t("contact.email")}</p>
                   <p className="text-gray-300 text-sm">bvirinni@gmail.com</p>
                 </div>
               </div>
@@ -123,7 +124,7 @@ export default function Contact() {
                   <Phone className="h-6 w-6 text-white" />
                 </div>
                 <div className="text-center md:text-left">
-                  <p className="font-semibold text-white">Phone</p>
+                  <p className="font-semibold text-white">{t("contact.phone")}</p>
                   <p className="text-gray-300 text-sm">+54 9 (351) 357-6662</p>
                 </div>
               </div>
@@ -133,7 +134,7 @@ export default function Contact() {
                   <MapPin className="h-6 w-6 text-white" />
                 </div>
                 <div className="text-center md:text-left">
-                  <p className="font-semibold text-white">Location</p>
+                  <p className="font-semibold text-white">{t("contact.location")}</p>
                   <p className="text-gray-300 text-sm">Córdoba, Argentina</p>
                 </div>
               </div>
@@ -143,7 +144,7 @@ export default function Contact() {
           {/* Contact Form */}
           <Card className="bg-gray-800 border-gray-700">
             <CardHeader>
-              <CardTitle className="text-white">Send Message</CardTitle>
+              <CardTitle className="text-white">{t("contact.sendMessage")}</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -151,7 +152,7 @@ export default function Contact() {
                   <Input
                     type="text"
                     name="name"
-                    placeholder="John Doe"
+                    placeholder={t("contact.namePlaceholder")}
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -163,7 +164,7 @@ export default function Contact() {
                   <Input
                     type="email"
                     name="email"
-                    placeholder="email@example.com"
+                    placeholder={t("contact.emailPlaceholder")}
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -174,7 +175,7 @@ export default function Contact() {
                 <div>
                   <Textarea
                     name="message"
-                    placeholder="Hi, I would like to..."
+                    placeholder={t("contact.messagePlaceholder")}
                     value={formData.message}
                     onChange={handleChange}
                     required
@@ -188,7 +189,7 @@ export default function Contact() {
                   className="w-full bg-indigo-600 hover:bg-indigo-700 hover:cursor-pointer"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? t("contact.sending") : t("contact.send")}
                 </Button>
               </form>
             </CardContent>
@@ -200,7 +201,7 @@ export default function Contact() {
           <AlertDialogOverlay className="bg-black/50 backdrop-blur-sm" />
           <AlertDialogContent className="bg-gray-800 dark:bg-gray-800 border border-gray-600">
             <AlertDialogHeader>
-              <AlertDialogTitle className="text-white">Notice</AlertDialogTitle>
+              <AlertDialogTitle className="text-white">{t("contact.notice")}</AlertDialogTitle>
               <AlertDialogDescription className="text-sm text-gray-300">
                 {dialogMessage}
               </AlertDialogDescription>
@@ -210,7 +211,7 @@ export default function Contact() {
                 onClick={() => setShowDialog(false)}
                 className="bg-indigo-600 hover:bg-indigo-700 text-white hover:cursor-pointer"
               >
-                OK
+                {t("common.ok")}
               </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
