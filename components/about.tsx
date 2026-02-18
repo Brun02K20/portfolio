@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Download, Github, Mail, FolderOpen } from "lucide-react"
+import { Download, Github, Mail, FolderOpen, Linkedin } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
 
@@ -26,7 +26,7 @@ export default function About() {
           <div className="relative w-32 h-32 mx-auto mb-8">
             <Image
               src="/assets/profile.jpeg"
-              alt="John Doe"
+              alt="Bruno Virinni"
               fill
               className="rounded-full object-cover border-4 border-indigo-500"
             />
@@ -36,13 +36,10 @@ export default function About() {
 
           <div className="max-w-3xl mx-auto mb-8">
             <p className="text-lg text-gray-300 leading-relaxed mb-2">
-              I'm a Fullstack Developer with over three years of experience in software development and a University Information Systems Developer Analyst, a graduate of the UTN, currently in my final year of Information Systems Engineering.
+              I'm a Fullstack Developer with over four years of experience in software development and a University Information Systems Developer Analyst, a graduate of the UTN, currently in my final year of Information Systems Engineering.
             </p>
             <p className="text-lg text-gray-300 leading-relaxed mb-2">
               Throughout my career, I've worked on various projects on both the backend and frontend, utilizing modern technologies to build efficient, scalable, and user-centric solutions. I stand out for my ability to quickly adapt to new environments and languages, and for my mindset focused on problem-solving and continuous improvement.
-            </p>
-            <p className="text-lg text-gray-300 leading-relaxed mb-2">
-              In addition to my technical skills, I have soft skills that I consider essential: good disposition for teamwork, experience leading initiatives and collaborating with different profiles, and an intermediate level of English that allows me to interact with technical documentation and international teams.
             </p>
             <p className="text-lg text-gray-300 leading-relaxed">
               In my free time I enjoy exercising, spending time with friends, and playing video games.
@@ -51,7 +48,7 @@ export default function About() {
 
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="/assets/Bruno Laszlo Virinni - CV .docx.pdf"
+              href="/assets/Bruno Laszlo Virinni - CV.pdf"
               download
               target="_blank"
               rel="noopener noreferrer"
@@ -69,6 +66,16 @@ export default function About() {
               >
                 <Github className="h-4 w-4" />
                 Github
+              </Button>
+            </a>
+
+            <a href="https://www.linkedin.com/in/bruno-laszlo-virinni" target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="outline"
+                className="flex items-center gap-2 border-gray-600 text-white hover:bg-gray-800 bg-transparent hover:cursor-pointer"
+              >
+                <Linkedin className="h-4 w-4" />
+                LinkedIn
               </Button>
             </a>
 

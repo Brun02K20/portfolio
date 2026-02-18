@@ -19,11 +19,11 @@ import Nodejs from "@/icons/Nodejs"
 import Expressjs from "@/icons/Express"
 import Dotenv from "@/icons/Dotenv"
 import FastAPI from "@/icons/FastApi"
-import Java from "@/icons/Java"
+import C from "@/icons/C#"
 import JWT from "@/icons/JWT"
 import NestJS from "@/icons/Nest"
 import Python from "@/icons/Python"
-import Spring from "@/icons/Spring"
+import MicrosoftNET from "@/icons/aspnet"
 import TypeScript from "@/icons/Typescript"
 
 // DataBase
@@ -49,6 +49,9 @@ import Supabase from "@/icons/SupaBase"
 import Swagger from "@/icons/Swagger"
 import Vercel from "@/icons/Vercel"
 import VisualStudioCode from "@/icons/VisualStudioCode"
+import PM2 from "@/icons/PM2"
+import Linux from "@/icons/Linux"
+import ClaudeAI from "@/icons/Claude"
 
 
 const skillCategories = [
@@ -91,41 +94,40 @@ const skillCategories = [
     ],
   },
   {
-    title: "Tools",
+    title: "Tools & AI",
     skills: [
       { name: "Git", icon: <Git /> },
       { name: "GitHub", icon: <GitHub /> },
       { name: "GitLab", icon: <GitLab /> },
       { name: "GitHub Copilot", icon: <GitHubCopilot /> },
       { name: "OpenAI", icon: <OpenAI /> },
-      { name: "Firebase", icon: <Firebase /> },
+      
       { name: "Postman", icon: <Postman /> },
       { name: "Swagger", icon: <Swagger /> },
-      { name: "Vercel", icon: <Vercel /> },
-      { name: "Supabase", icon: <Supabase /> },
+      
       { name: "Atlassian", icon: <Atlassian /> },
       { name: "Visual Studio Code", icon: <VisualStudioCode /> },
       { name: "PyCharm", icon: <PyCharm /> },
+      { name: "Claude AI", icon: <ClaudeAI /> },
     ],
   },
-  // {
-  //   title: "DevOps",
-  //   skills: [
-  //     { name: "Docker", icon: "🐳" },
-  //     { name: "AWS", icon: "☁️" },
-  //     { name: "Vercel", icon: "▲" },
-  //     { name: "Netlify", icon: "🌐" },
-  //     { name: "GitHub Actions", icon: "🔄" },
-  //     { name: "Linux", icon: "🐧" },
-  //   ],
-  // },
+  {
+    title: "Cloud & DevOps",
+    skills: [
+      { name: "Docker", icon: <Docker /> },
+      { name: "Linux", icon: <Linux /> },
+      { name: "PM2", icon: <PM2 /> },
+      { name: "Firebase", icon: <Firebase /> },
+      { name: "Vercel", icon: <Vercel /> },
+      { name: "Supabase", icon: <Supabase /> },
+    ],
+  },
   {
     title: "Learning",
     skills: [
       { name: "Next.js", icon: <Nextjs /> },
-      { name: "Java", icon: <Java /> },
-      { name: "Spring Boot", icon: <Spring /> },
-      { name: "Docker", icon: <Docker /> },
+      { name: "C#", icon: <C /> },
+      { name: "ASP .NET", icon: <MicrosoftNET /> },
       { name: "Canva", icon: <Canva /> },
     ],
   },

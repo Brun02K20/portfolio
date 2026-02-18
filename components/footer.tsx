@@ -4,7 +4,6 @@ const socialLinks = [
   { name: "GitHub", icon: Github, href: "https://github.com/brun02k20" },
   { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/bruno-laszlo-virinni" },
   { name: "Email", icon: Mail, href: "mailto:bvirinni@gmail.com" },
-  { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/bruno_.virinni" },
 ]
 
 export default function Footer() {

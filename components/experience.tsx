@@ -8,11 +8,10 @@ const experiences = [
     description: (
       <ul className="list-disc list-inside mb-4 text-gray-100 text-sm">
         <li>
-          Integrate third-party services into existing systems such as payment
-          gateways, WhatsApp, file servers and others.
+          Digital solutions for businesses: commercial websites, management systems, and payment gateways.
         </li>
         <li>
-          I handle requirements gathering from clients, business solution design, and deployment on servers.
+          Requirements gathering, scope definition, and project estimation in direct contact with clients.
         </li>
       </ul>
     ),
@@ -40,32 +39,19 @@ const experiences = [
     ],
   },
   {
-    period: "06.2024 - present",
+    period: "06.2024 - 01.2026",
     position: "Ssr. FullStack Developer & Team Leader",
     company: "EngTrade - Servicios de Consultoría",
     description: (
       <ul className="list-disc list-inside mb-4 text-gray-100 text-sm">
         <li>
-          Integrate third-party services into existing systems such as payment
-          gateways, WhatsApp, and others.
+          Active participation in software architecture and technical planning, considering scalability, availability, and long-term maintenance.
         </li>
         <li>
-          Contributed pioneering solutions such as using a microservices
-          architecture to save development time and increase system scalability
-          and availability.
+          Participation in multiple software projects with an end-to-end product vision, from analysis and design to development and deployment, including commercial platforms and ERP systems.
         </li>
         <li>
-          Participate in all stages of the development of DOCTORFY, a platform
-          that allows the management of medical appointments provided within 72
-          hours:{" "}
-          <a
-            href="https://doctorfy.com.ar/"
-            className="underline text-indigo-400"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            https://doctorfy.com.ar/
-          </a>
+          Estimation and planning of software projects, aligning technical solutions with product and business requirements.
         </li>
       </ul>
     ),
@@ -95,7 +81,7 @@ const experiences = [
     ],
   },
   {
-    period: "01.2023 - 06.2024",
+    period: "12.2021 - 06.2024",
     position: "Jr. FullStack Developer",
     company: "EngTrade - Servicios de Consultoría",
     description: (
@@ -107,10 +93,13 @@ const experiences = [
           Increasing the scalability of existing systems
         </li>
         <li>
-          Optimizing queries in databases and microservices
+          Optimizing queries in databases
         </li>
         <li>
           Designing intuitive and user-friendly user interfaces
+        </li>
+        <li>
+          Training of new employees within the organization.
         </li>
       </ul>
     ),
@@ -132,33 +121,6 @@ const experiences = [
       "VSCode",
     ],
   },
-  {
-    period: "12.2021 - 01.2023",
-    position: "Jr. FrontEnd Developer & Jr. Team Leader",
-    company: "EngTrade - Servicios de Consultoría",
-    description: (
-      <ul className="list-disc list-inside mb-4 text-gray-100 text-sm">
-        <li>
-          Website layout via HTML, CSS, and JavaScript.
-        </li>
-        <li>
-          Database updates using Excel.
-        </li>
-        <li>
-          Training of new employees within the organization.
-        </li>
-      </ul>
-    ),
-    // rating: "7/8",
-    technologies: [
-      "HTML",
-      "CSS",
-      "Materialize CSS",
-      "Git",
-      "GitHub",
-      "VSCode",
-    ],
-  },
 ];
 
 export default function Experience() {
@@ -171,7 +133,7 @@ export default function Experience() {
         <h4 className="text-lg font-semibold text-center text-gray-400 mb-8">
           My professional journey so far. More details{" "}
           <a
-            href="/assets/Bruno Laszlo Virinni - CV .docx.pdf"
+            href="/assets/Bruno Laszlo Virinni - CV.pdf"
             download
             target="_blank"
             rel="noopener noreferrer"
