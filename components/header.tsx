@@ -81,8 +81,8 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-40">
           <div className="fixed inset-0 bg-gray-900 bg-opacity-75" onClick={() => setMobileMenuOpen(false)} />
-          <div className="fixed inset-y-0 left-0 z-50 w-64 bg-gray-800 px-6 py-8 shadow-lg">
-            <div className="flex h-16 shrink-0 items-center">
+          <div className="fixed inset-y-0 left-0 z-50 w-64 bg-gray-800 px-6 py-8 shadow-lg ">
+            <div className="flex h-16 shrink-0 items-center mt-4">
               <h2 className="text-xl font-bold text-white">Bruno Virinni</h2>
             </div>
             <nav className="">
