@@ -11,7 +11,7 @@ const projects = [
     titleKey: "projects.items.doctorfyTitle",
     descriptionKey: "projects.items.doctorfyDesc",
     image: "/images/doctor-ty.png",
-    technologies: ["React.js", "Express", "Node.js", "MySQL", "Sequelize", "Materialize CSS", "JWT", "Payway API", "WAAPI", "Email Integration"],
+    technologies: ["React.js", "React Native", "Express", "Node.js", "MySQL", "Sequelize", "Materialize CSS", "JWT", "Payway API", "WAAPI", "Email Integration"],
     liveUrl: "https://doctorfy.com.ar/",
     githubUrl: "https://github.com/Brun02K20/plataforma_medica_frontend",
     githubUrl2: "https://github.com/Brun02K20/plataforma_medica_backend"
@@ -34,6 +34,22 @@ const projects = [
     liveUrl: "https://kokus.byalvear.com",
     githubUrl: "https://github.com/alveardevs/kokus-front",
     githubUrl2: "https://github.com/alveardevs/kokus-back",
+  },
+  {
+    titleKey: "projects.items.workflowTitle",
+    descriptionKey: "projects.items.workflowDesc",
+    image: "/images/workflow.png",
+    technologies: ["Node.js", "Markdown", "Javascript"],
+    liveUrl: "https://www.npmjs.com/package/brunovdev-workflow",
+    githubUrl: "https://github.com/Brun02K20/ai-agentic-environment",
+  },
+  {
+    titleKey: "projects.items.tribalTitle",
+    descriptionKey: "projects.items.tribalDesc",
+    image: "/images/tribal_trend.png",
+    technologies: ["Next.js", "Nest.js", "MySQL", "MongoDB", "Mercado Pago API", "JWT", "TailwindCSS", "Google Auth API", "Docker", "GitHub Copilot", "Email Integration", "Linux Server", "Groq AI"],
+    liveUrl: "https://tribaltrend.com.ar",
+    githubUrl: "https://github.com/Brun02K20/tribal_front",
   },
   // {
   //   title: "Language Translator",

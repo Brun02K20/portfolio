@@ -16,6 +16,7 @@ import React from "@/icons/ReactIcon"
 import Shadcnui from "@/icons/Shadcn"
 import TailwindCSS from "@/icons/Tailwind"
 import Expo from "@/icons/Expo"
+// Mobile
 
 // Backend
 import Nodejs from "@/icons/Nodejs"
@@ -31,6 +32,7 @@ import TypeScript from "@/icons/Typescript"
 
 // DataBase
 import MySQL from "@/icons/MySQL"
+import { MongoDB } from "@/icons/mongo"
 import PostgreSQL from "@/icons/Postgre"
 import Sequelize from "@/icons/Sequelize"
 import SQLite from "@/icons/SQLite"
@@ -47,14 +49,15 @@ import GitLab from "@/icons/Gitlab"
 import GitHubCopilot from "@/icons/Copilot"
 import OpenAI from "@/icons/OpenAI"
 import Postman from "@/icons/Postman"
-import PyCharm from "@/icons/Pycharm"
 import Supabase from "@/icons/SupaBase"
 import Swagger from "@/icons/Swagger"
 import Vercel from "@/icons/Vercel"
-import VisualStudioCode from "@/icons/VisualStudioCode"
 import PM2 from "@/icons/PM2"
 import Linux from "@/icons/Linux"
 import ClaudeAI from "@/icons/Claude"
+import { MercadoPago } from "@/icons/mercadopago"
+import { Groq } from "@/icons/groq"
+import { Google as GoogleAuth } from "@/icons/googleauth"
 
 
 const skillCategories = [
@@ -62,6 +65,7 @@ const skillCategories = [
     titleKey: "skills.frontend",
     skills: [
       { name: "React", icon: <React /> },
+      { name: "Next.js", icon: <Nextjs /> },
       { name: "Astro", icon: <Astro /> },
       { name: "Tailwind CSS", icon: <TailwindCSS /> },
       { name: "Bootstrap", icon: <Bootstrap /> },
@@ -70,7 +74,7 @@ const skillCategories = [
       { name: "HTML5", icon: <HTML5 /> },
       { name: "CSS3", icon: <CSS /> },
       { name: "JavaScript", icon: <JavaScript /> },
-      {name: "Expo", icon: <Expo /> },
+      { name: "Expo", icon: <Expo /> },
     ],
   },
   {
@@ -90,6 +94,7 @@ const skillCategories = [
     titleKey: "skills.database",
     skills: [
       { name: "MySQL", icon: <MySQL /> },
+      { name: "MongoDB", icon: <MongoDB /> },
       { name: "PostgreSQL", icon: <PostgreSQL /> },
       { name: "Sequelize", icon: <Sequelize /> },
       { name: "SQLite", icon: <SQLite /> },
@@ -104,14 +109,13 @@ const skillCategories = [
       { name: "GitLab", icon: <GitLab /> },
       { name: "GitHub Copilot", icon: <GitHubCopilot /> },
       { name: "OpenAI", icon: <OpenAI /> },
-      
+      { name: "Claude AI", icon: <ClaudeAI /> },
+      { name: "Groq", icon: <Groq /> },
       { name: "Postman", icon: <Postman /> },
       { name: "Swagger", icon: <Swagger /> },
-      
       { name: "Atlassian", icon: <Atlassian /> },
-      { name: "Visual Studio Code", icon: <VisualStudioCode /> },
-      { name: "PyCharm", icon: <PyCharm /> },
-      { name: "Claude AI", icon: <ClaudeAI /> },
+      { name: "Mercado Pago", icon: <MercadoPago /> },
+      { name: "Google Auth", icon: <GoogleAuth /> },
     ],
   },
   {
@@ -128,7 +132,6 @@ const skillCategories = [
   {
     titleKey: "skills.learning",
     skills: [
-      { name: "Next.js", icon: <Nextjs /> },
       { name: "C#", icon: <C /> },
       { name: "ASP .NET", icon: <MicrosoftNET /> },
       { name: "Canva", icon: <Canva /> },
