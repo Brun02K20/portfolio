@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://brunovirinni.vercel.app/assets/profile.jpeg',
-        width: 1200,
-        height: 630,
+        width: 800,
+        height: 800,
         alt: 'Bruno Virinni Portfolio Screenshot',
       },
     ],
