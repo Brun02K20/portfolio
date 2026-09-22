@@ -24,12 +24,14 @@ import SectionHeading from "@/components/section-heading";
 import Reveal from "@/components/reveal";
 import { Cta } from "@/components/cta-buttons";
 import { mailto, site } from "@/lib/site";
+import { useCvUrl } from "@/hooks/use-cv";
 
 const inputClasses =
   "h-12 rounded-xl border-white/10 bg-white/[0.04] dark:bg-white/[0.04] px-4 text-white placeholder:text-zinc-500 transition-all duration-300 focus-visible:border-purple-400/60 focus-visible:bg-white/[0.07] focus-visible:ring-4 focus-visible:ring-purple-500/20 aria-invalid:border-red-500/70 aria-invalid:ring-red-500/20";
 
 export default function Contact() {
   const { t } = useTranslation();
+  const cvUrl = useCvUrl();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -194,7 +196,7 @@ export default function Contact() {
             <p className="text-sm text-zinc-400">
               {t("contact.orCv")}{" "}
               <a
-                href={site.cvUrl}
+                href={cvUrl}
                 download
                 target="_blank"
                 rel="noopener noreferrer"

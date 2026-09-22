@@ -8,6 +8,8 @@ const resources = {
         ok: "OK",
         openNewTab: "Opens in a new tab",
         scrollDown: "Scroll",
+        // The CV lives in the bundle so it always matches the language on screen.
+        cvUrl: "/assets/Bruno Laszlo Virinni - CV - English.pdf",
       },
       header: {
         about: "About",
@@ -221,6 +223,8 @@ const resources = {
         ok: "Aceptar",
         openNewTab: "Se abre en una pestaña nueva",
         scrollDown: "Deslizá",
+        // El CV vive en el bundle para que siempre coincida con el idioma en pantalla.
+        cvUrl: "/assets/Bruno Laszlo Virinni - CV - Spanish.pdf",
       },
       header: {
         about: "Sobre mí",

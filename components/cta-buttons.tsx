@@ -3,8 +3,8 @@
 import type { ComponentProps, ReactNode } from "react"
 import { Download, Mail } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { site } from "@/lib/site"
 import { scrollToSection } from "@/lib/scroll"
+import { useCvUrl } from "@/hooks/use-cv"
 
 type Size = "sm" | "md" | "lg"
 
@@ -108,7 +108,7 @@ export function IconCta({
   )
 }
 
-/** "Download CV" – the same primary CTA everywhere. */
+/** "Download CV" – the same primary CTA everywhere, in the current language. */
 export function DownloadCvCta({
   label,
   size,
@@ -120,8 +120,10 @@ export function DownloadCvCta({
   variant?: keyof typeof variants
   className?: string
 }) {
+  const cvUrl = useCvUrl()
+
   return (
-    <Cta href={site.cvUrl} download variant={variant} size={size} className={className}>
+    <Cta href={cvUrl} download variant={variant} size={size} className={className}>
       <Download className="transition-transform duration-300 group-hover:-translate-y-0.5" />
       {label}
     </Cta>

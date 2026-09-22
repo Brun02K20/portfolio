@@ -6,7 +6,7 @@ import SectionHeading from "@/components/section-heading"
 import CtaBanner from "@/components/cta-banner"
 import { Timeline, TimelineItem } from "@/components/timeline"
 import { ContactCta, DownloadCvCta } from "@/components/cta-buttons"
-import { site } from "@/lib/site"
+import { useCvUrl } from "@/hooks/use-cv"
 
 const experiences = [
   {
@@ -93,6 +93,7 @@ const experiences = [
 
 export default function Experience() {
   const { t } = useTranslation()
+  const cvUrl = useCvUrl()
 
   return (
     <section id="experience" className="relative px-4 py-24 sm:px-6 lg:px-8">
@@ -105,7 +106,7 @@ export default function Experience() {
             <>
               {t("experience.subtitlePrefix")}{" "}
               <a
-                href={site.cvUrl}
+                href={cvUrl}
                 download
                 target="_blank"
                 rel="noopener noreferrer"

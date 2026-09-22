@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react"
 import { ArrowUp, Download, Mail } from "lucide-react"
 import { useTranslation } from "react-i18next"
-import { site } from "@/lib/site"
 import { scrollToSection, scrollToTop } from "@/lib/scroll"
+import { useCvUrl } from "@/hooks/use-cv"
 import { cn } from "@/lib/utils"
 
 /**
@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils"
  */
 export default function FloatingCta() {
   const { t } = useTranslation()
+  const cvUrl = useCvUrl()
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -55,7 +56,7 @@ export default function FloatingCta() {
       </button>
 
       <a
-        href={site.cvUrl}
+        href={cvUrl}
         download
         target="_blank"
         rel="noopener noreferrer"
