@@ -1,7 +1,11 @@
 "use client"
 
-import { Card, CardContent } from "@/components/ui/card"
+import type { CSSProperties, ReactNode } from "react"
+import type { LucideIcon } from "lucide-react"
+import { BookOpen, Cloud, Code, Database, Monitor, Server, Wrench } from "lucide-react"
 import { useTranslation } from "react-i18next"
+import SectionHeading from "@/components/section-heading"
+import Reveal from "@/components/reveal"
 
 // importo iconos
 // Frontend
@@ -23,12 +27,13 @@ import Nodejs from "@/icons/Nodejs"
 import Expressjs from "@/icons/Express"
 import Dotenv from "@/icons/Dotenv"
 import FastAPI from "@/icons/FastApi"
-import C from "@/icons/C#"
+import C from "@/icons/CSharp"
 import JWT from "@/icons/JWT"
 import NestJS from "@/icons/Nest"
 import Python from "@/icons/Python"
 import MicrosoftNET from "@/icons/aspnet"
 import TypeScript from "@/icons/Typescript"
+import { Auth0 } from "@/icons/Auth0"
 
 // DataBase
 import MySQL from "@/icons/MySQL"
@@ -58,11 +63,25 @@ import ClaudeAI from "@/icons/Claude"
 import { MercadoPago } from "@/icons/mercadopago"
 import { Groq } from "@/icons/groq"
 import { Google as GoogleAuth } from "@/icons/googleauth"
+import { ModelContextProtocol } from "@/icons/ModelContextProtocol"
+import { AmazonWebServices } from "@/icons/AmazonWebServices"
 
+type Category = {
+  titleKey: string
+  icon: LucideIcon
+  /** Tailwind gradient stops for the category icon. */
+  accent: string
+  /** Colours of the rotating border beam. */
+  beam: [string, string]
+  skills: { name: string; icon: ReactNode }[]
+}
 
-const skillCategories = [
+const skillCategories: Category[] = [
   {
     titleKey: "skills.frontend",
+    icon: Monitor,
+    accent: "from-cyan-400 to-blue-500",
+    beam: ["#22d3ee", "#3b82f6"],
     skills: [
       { name: "React", icon: <React /> },
       { name: "Next.js", icon: <Nextjs /> },
@@ -79,6 +98,9 @@ const skillCategories = [
   },
   {
     titleKey: "skills.backend",
+    icon: Server,
+    accent: "from-emerald-400 to-teal-500",
+    beam: ["#34d399", "#14b8a6"],
     skills: [
       { name: "Node.js", icon: <Nodejs /> },
       { name: "Express", icon: <Expressjs /> },
@@ -88,10 +110,14 @@ const skillCategories = [
       { name: "Python", icon: <Python /> },
       { name: "FastAPI", icon: <FastAPI /> },
       { name: "JWT", icon: <JWT /> },
+      { name: "Auth0", icon: <Auth0 /> },
     ],
   },
   {
     titleKey: "skills.database",
+    icon: Database,
+    accent: "from-amber-400 to-orange-500",
+    beam: ["#fbbf24", "#f97316"],
     skills: [
       { name: "MySQL", icon: <MySQL /> },
       { name: "MongoDB", icon: <MongoDB /> },
@@ -103,6 +129,9 @@ const skillCategories = [
   },
   {
     titleKey: "skills.tools",
+    icon: Wrench,
+    accent: "from-purple-400 to-pink-500",
+    beam: ["#a855f7", "#ec4899"],
     skills: [
       { name: "Git", icon: <Git /> },
       { name: "GitHub", icon: <GitHub /> },
@@ -111,6 +140,7 @@ const skillCategories = [
       { name: "OpenAI", icon: <OpenAI /> },
       { name: "Claude AI", icon: <ClaudeAI /> },
       { name: "Groq", icon: <Groq /> },
+      { name: "MCP", icon: <ModelContextProtocol /> },
       { name: "Postman", icon: <Postman /> },
       { name: "Swagger", icon: <Swagger /> },
       { name: "Atlassian", icon: <Atlassian /> },
@@ -120,7 +150,11 @@ const skillCategories = [
   },
   {
     titleKey: "skills.cloud",
+    icon: Cloud,
+    accent: "from-sky-400 to-indigo-500",
+    beam: ["#38bdf8", "#6366f1"],
     skills: [
+      { name: "AWS", icon: <AmazonWebServices /> },
       { name: "Docker", icon: <Docker /> },
       { name: "Linux", icon: <Linux /> },
       { name: "PM2", icon: <PM2 /> },
@@ -131,6 +165,9 @@ const skillCategories = [
   },
   {
     titleKey: "skills.learning",
+    icon: BookOpen,
+    accent: "from-rose-400 to-red-500",
+    beam: ["#fb7185", "#ef4444"],
     skills: [
       { name: "C#", icon: <C /> },
       { name: "ASP .NET", icon: <MicrosoftNET /> },
@@ -139,30 +176,76 @@ const skillCategories = [
   },
 ]
 
+const totalSkills = skillCategories.reduce((count, category) => count + category.skills.length, 0)
+
 export default function Skills() {
   const { t } = useTranslation()
 
   return (
-    <section id="skills" className="py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-white mb-16">{t("skills.title")}</h2>
+    <section id="skills" className="relative px-4 py-24 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeading
+          eyebrow="02"
+          icon={Code}
+          title={t("skills.title")}
+          subtitle={
+            <>
+              {t("skills.subtitle")}
+              <span className="mt-4 block">
+                <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-semibold text-white">
+                  <span className="gradient-text-static text-base font-black">{totalSkills}</span>
+                  {t("skills.count")}
+                </span>
+              </span>
+            </>
+          }
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="bg-gray-800 border-gray-700 text-white">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-6 text-red-400">{t(category.titleKey)}</h3>
+            <Reveal key={category.titleKey} delay={(index % 3) * 100}>
+              <div
+                className="border-beam glass rounded-3xl p-6 transition-all duration-500 hover:-translate-y-2 hover:bg-white/[0.06] hover:shadow-2xl hover:shadow-purple-500/15"
+                style={
+                  {
+                    "--beam-a": category.beam[0],
+                    "--beam-b": category.beam[1],
+                    "--beam-delay": `${-index * 1.3}s`,
+                  } as CSSProperties
+                }
+              >
+                <div className="mb-6 flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    <span
+                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${category.accent} text-white shadow-lg shadow-black/30`}
+                    >
+                      <category.icon className="h-5 w-5" />
+                    </span>
+                    <h3 className="text-lg font-bold text-white">{t(category.titleKey)}</h3>
+                  </div>
+                  <span className="rounded-full bg-white/5 px-2.5 py-1 text-xs font-semibold text-zinc-400 ring-1 ring-inset ring-white/10">
+                    {category.skills.length}
+                  </span>
+                </div>
 
-                <div className="grid grid-cols-3 xl:grid-cols-4 gap-4">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="flex flex-col items-center text-center">
-                      <div className="text-xl mb-2">{skill.icon}</div>
-                      <span className="text-xs text-gray-300">{skill.name}</span>
+                <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
+                  {category.skills.map((skill) => (
+                    <div
+                      key={skill.name}
+                      title={skill.name}
+                      className="group flex flex-col items-center gap-2 rounded-xl px-1 py-3 text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.07]"
+                    >
+                      <span className="flex h-10 w-10 items-center justify-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] transition-transform duration-300 group-hover:scale-125 [&_svg]:h-8 [&_svg]:w-8">
+                        {skill.icon}
+                      </span>
+                      <span className="text-[11px] font-medium leading-tight text-zinc-400 transition-colors group-hover:text-white">
+                        {skill.name}
+                      </span>
                     </div>
                   ))}
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -3,67 +3,44 @@
 
 @custom-variant dark (&:is(.dark *));
 
-:root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+/* Animatable custom property used by the rotating border beams */
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
 }
 
+/*
+ * The portfolio is dark-only, so the base tokens are already the dark palette.
+ * `.dark` mirrors them so shadcn components behave the same either way.
+ */
+:root,
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: oklch(0.13 0.03 275);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
+  --card: oklch(0.18 0.035 275);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
+  --popover: oklch(0.18 0.035 275);
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.985 0 0);
   --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
+  --secondary: oklch(0.25 0.04 275);
   --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
+  --muted: oklch(0.25 0.04 275);
+  --muted-foreground: oklch(0.75 0.02 275);
+  --accent: oklch(0.25 0.04 275);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.65 0.2 290);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
+  --radius: 0.75rem;
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
@@ -72,6 +49,13 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
+
+  /* Brand gradient stops */
+  --brand-1: #6366f1; /* indigo */
+  --brand-2: #a855f7; /* purple */
+  --brand-3: #ec4899; /* pink */
+  --brand-4: #22d3ee; /* cyan */
+  --brand-5: #34d399; /* emerald */
 }
 
 @theme inline {
@@ -111,13 +95,455 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-brand-1: var(--brand-1);
+  --color-brand-2: var(--brand-2);
+  --color-brand-3: var(--brand-3);
+  --color-brand-4: var(--brand-4);
+  --color-brand-5: var(--brand-5);
+
+  /* Motion utilities: animate-float, animate-gradient-x, ... */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float 9s ease-in-out infinite;
+  --animate-float-delayed: float 7s ease-in-out 1.5s infinite;
+  --animate-gradient-x: gradient-x 8s ease infinite;
+  --animate-gradient-fast: gradient-x 4s ease infinite;
+  --animate-spin-slow: spin 10s linear infinite;
+  --animate-spin-slower: spin 24s linear infinite;
+  --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
+  --animate-pulse-ring: pulse-ring 2.2s cubic-bezier(0.2, 0.7, 0.3, 1) infinite;
+  --animate-shimmer: shimmer 2.8s linear infinite;
+  --animate-blob: blob 20s ease-in-out infinite;
+  --animate-blob-reverse: blob 26s ease-in-out -8s infinite reverse;
+  --animate-blink: blink 1s step-end infinite;
+  --animate-scroll-hint: scroll-hint 1.8s ease-in-out infinite;
+  --animate-bounce-soft: bounce-soft 2s ease-in-out infinite;
+  --animate-timeline-glow: timeline-glow 4s ease-in-out infinite;
+  --animate-timeline-run: timeline-run 7s linear infinite;
+}
+
+/* Keyframes referenced by the --animate-* theme variables and by the component classes below */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes gradient-x {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-150%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(250%) skewX(-15deg);
+  }
+}
+
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(6vw, -4vh) scale(1.12);
+  }
+  50% {
+    transform: translate(-4vw, 6vh) scale(0.94);
+  }
+  75% {
+    transform: translate(3vw, 3vh) scale(1.06);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-hint {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes timeline-glow {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes timeline-run {
+  0% {
+    top: -8rem;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes border-rotate {
+  to {
+    --border-angle: 360deg;
+  }
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    background-color: #0a0a1a;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--brand-2) 55%, transparent);
+    color: white;
+  }
+
+  /* Thin, on-brand scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0a1a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--brand-1), var(--brand-3));
+    border-radius: 999px;
+    border: 2px solid #0a0a1a;
+  }
+}
+
+@layer components {
+  /* ------------------------------------------------------------------ */
+  /* Gradient text                                                       */
+  /* ------------------------------------------------------------------ */
+  .gradient-text {
+    background-image: linear-gradient(
+      90deg,
+      var(--brand-1),
+      var(--brand-2),
+      var(--brand-3),
+      var(--brand-4),
+      var(--brand-1)
+    );
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-x 8s ease infinite;
+  }
+
+  .gradient-text-static {
+    background-image: linear-gradient(90deg, var(--brand-1), var(--brand-2), var(--brand-3));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Glass surfaces                                                      */
+  /* ------------------------------------------------------------------ */
+  /*
+   * Cards sit on top of the animated particle canvas, so they deliberately avoid
+   * backdrop-filter (which would re-blur the backdrop on every frame). A tinted,
+   * translucent fill gives the same glassy look at a fraction of the cost.
+   */
+  .glass {
+    background:
+      linear-gradient(160deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%),
+      rgba(12, 12, 34, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Real backdrop blur: reserved for the few floating surfaces (header, drawer, dialog). */
+  .glass-strong {
+    background: rgba(12, 12, 30, 0.72);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Rotating "beam" running along the border of a box.                 */
+  /* Apply to any element with a border-radius. Tweak with               */
+  /* --beam-duration, --beam-width, --beam-a, --beam-b, --beam-delay.    */
+  /* ------------------------------------------------------------------ */
+  .border-beam {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .border-beam::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: var(--beam-width, 1.5px);
+    background: conic-gradient(
+      from var(--border-angle),
+      transparent 0%,
+      transparent 42%,
+      var(--beam-a, var(--brand-1)) 50%,
+      var(--beam-b, var(--brand-3)) 56%,
+      transparent 64%,
+      transparent 100%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: border-rotate var(--beam-duration, 7s) linear infinite;
+    animation-delay: var(--beam-delay, 0s);
+    /* Off-screen cards keep their beam frozen; <BeamController /> flips this on. */
+    animation-play-state: paused;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.9;
+    transition: opacity 0.4s ease;
+  }
+
+  .border-beam[data-beam='on']::before {
+    animation-play-state: running;
+  }
+
+  .border-beam:hover::before {
+    opacity: 1;
+    background: conic-gradient(
+      from var(--border-angle),
+      transparent 0%,
+      transparent 30%,
+      var(--beam-a, var(--brand-1)) 45%,
+      var(--beam-b, var(--brand-3)) 55%,
+      var(--beam-a, var(--brand-1)) 65%,
+      transparent 78%,
+      transparent 100%
+    );
+  }
+
+  /* Softer variant: beam only appears on hover */
+  .border-beam-hover::before {
+    opacity: 0;
+  }
+  .border-beam-hover:hover::before {
+    opacity: 1;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Always-on animated gradient border (no @property needed)           */
+  /* ------------------------------------------------------------------ */
+  .gradient-border {
+    position: relative;
+    border: 1px solid transparent;
+    background:
+      linear-gradient(var(--gb-fill, #12122a), var(--gb-fill, #12122a)) padding-box,
+      linear-gradient(
+          120deg,
+          var(--brand-1),
+          var(--brand-2),
+          var(--brand-3),
+          var(--brand-4),
+          var(--brand-1)
+        )
+        border-box;
+    background-size:
+      100% 100%,
+      300% 300%;
+    animation: gradient-x 6s ease infinite;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Shimmer sweep for primary CTAs                                      */
+  /* ------------------------------------------------------------------ */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    top: -20%;
+    bottom: -20%;
+    left: 0;
+    width: 35%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.45),
+      transparent
+    );
+    animation: shimmer 2.8s linear infinite;
+    pointer-events: none;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Glow helpers                                                        */
+  /* ------------------------------------------------------------------ */
+  .glow-brand {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.06),
+      0 10px 40px -10px color-mix(in oklab, var(--brand-2) 55%, transparent);
+  }
+
+  .glow-brand-lg {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 20px 70px -15px color-mix(in oklab, var(--brand-2) 70%, transparent),
+      0 0 40px -10px color-mix(in oklab, var(--brand-4) 45%, transparent);
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Scroll reveal (driven by <Reveal />)                                */
+  /* ------------------------------------------------------------------ */
+  .reveal {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  .reveal[data-direction='left'] {
+    transform: translate3d(-36px, 0, 0);
+  }
+  .reveal[data-direction='right'] {
+    transform: translate3d(36px, 0, 0);
+  }
+  .reveal[data-direction='scale'] {
+    transform: scale(0.92);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Aurora blobs used in the fixed page background                      */
+  /* ------------------------------------------------------------------ */
+  .aurora-blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(70px);
+    opacity: 0.38;
+    will-change: transform;
+  }
+
+  /* Subtle dotted grid */
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 100%);
+  }
+
+  /* Tech chips */
+  .chip {
+    @apply inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-medium transition-all duration-300;
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    color: rgb(212 212 216);
+  }
+  .chip:hover {
+    border-color: color-mix(in oklab, var(--brand-2) 60%, transparent);
+    background: color-mix(in oklab, var(--brand-2) 18%, transparent);
+    color: white;
+    transform: translateY(-1px);
+  }
+
+  /* Typewriter caret */
+  .caret::after {
+    content: '|';
+    margin-left: 2px;
+    color: var(--brand-4);
+    animation: blink 1s step-end infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }
